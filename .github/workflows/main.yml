@@ -29,10 +29,10 @@ jobs:
       - name: Setup
         run: yarn add @vue/cli@latest
       - name: Deploy to Server
-        uses: easingthemes/ssh-deploy@v2.1.5
+        uses: burnett01/rsync-deployments@4.1
         env:
             SSH_PRIVATE_KEY: ${{ secrets.KEYFILE}}
-            ARGS: "-rltgoDzvO --delete"
+            switches: -avzr --delete
             SOURCE: "dist/"
             REMOTE_HOST: robotrooster.io
             REMOTE_USER: bitnami
