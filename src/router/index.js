@@ -10,11 +10,21 @@ Vue.use(VueRouter)
 const routes = [{
         path: '/',
         component: () =>
+            import ('../views/ComingSoon.vue'),
+        meta: {
+            title: 'Robot Rooster'
+        }
+    },
+
+    {
+        path: '/home',
+        component: () =>
             import ('../views/all-home-version/MainDemoDark.vue'),
         meta: {
             title: 'Robot Rooster'
         }
     },
+
 
     {
         path: '/about',
