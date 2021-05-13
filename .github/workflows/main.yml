@@ -31,5 +31,7 @@ jobs:
       - name: Deployment
         run: |
               yarn build
-              echo ${{ secrets.KEYFILE }} > key.pem
-              scp -i ${{ github.workspace }}/key.pem -r dist/* bitnami@robotrooster.io:/home/bitnami/htdocs/ && rm -rf dist
+              mkdir ~/.ssh
+              echo "${{ secrets.KEYFILE }}" > ~/.ssh/key.pem
+              chmod 600 ~/.ssh/key.pem
+              scp -i ~/.ssh/key.pem -r dist/* bitnami@robotrooster.io:/home/bitnami/htdocs/ && rm -rf dist
