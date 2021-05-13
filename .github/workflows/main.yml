@@ -28,10 +28,13 @@ jobs:
       # Runs a single command using the runners shell
       - name: Setup
         run: yarn add @vue/cli@latest
-      - name: Deployment
-        run: |
-              yarn build
-              mkdir ~/.ssh
-              echo "${{ secrets.KEYFILE }}" > ~/.ssh/key.pem
-              chmod 400 ~/.ssh/key.pem
-              scp -i ~/.ssh/key.pem -r dist/* bitnami@robotrooster.io:/home/bitnami/htdocs/ && rm -rf dist
+      - name: Deploy to Server
+        uses: easingthemes/ssh-deploy@v2.1.5
+        env:
+            SSH_PRIVATE_KEY: ${{ secrets.KEYFILE}}
+            ARGS: "-rltgoDzvO --delete"
+            SOURCE: "dist/"
+            REMOTE_HOST: robotrooster.io
+            REMOTE_USER: bitnami
+            TARGET: /home/bitnami/htdocs/
+            EXCLUDE: "/dist/, /node_modules/"
