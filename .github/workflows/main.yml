@@ -41,5 +41,5 @@ jobs:
         run: echo "FAKE BUILD"
       
       - name: Deploy
-        run: scp -v -i rrkey -r dist/* bitnami@robotrooster.io:/home/bitnami/htdocs/  && rm -rf dist
+        run: scp -v -i rrkey -o StrictHostKeyChecking=no -r dist/* bitnami@robotrooster.io:/home/bitnami/htdocs/  && rm -rf dist
             
