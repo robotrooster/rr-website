@@ -37,9 +37,9 @@ jobs:
               echo "$DEPLOY_KEY" > rrkey
               chmod 400 rrkey
 
-      - name: Build
-        run: echo "FAKE BUILD"
+      - name: Build Project
+        run: yarn build
       
-      - name: Deploy
+      - name: Deploy to RobotRooster.io
         run: scp -v -i rrkey -o StrictHostKeyChecking=no -r dist/* bitnami@robotrooster.io:/home/bitnami/htdocs/  && rm -rf dist
             
