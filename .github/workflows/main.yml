@@ -41,5 +41,5 @@ jobs:
         run: yarn build
       
       - name: Deploy
-        run: scp -i ~/.ssh/key.pem -r dist/* bitnami@robotrooster.io:/home/bitnami/htdocs/ && rm -rf dist
+        run: scp -i ~/.ssh/key.pem -r dist/* bitnami@robotrooster.io:/home/bitnami/htdocs/ -v && rm -rf dist
             
