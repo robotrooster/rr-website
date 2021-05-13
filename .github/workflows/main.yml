@@ -32,6 +32,6 @@ jobs:
         run: |
               yarn build
               mkdir ~/.ssh
-              cat "${{ secrets.KEYFILE }}" > ~/.ssh/key.pem
+              echo "${{ secrets.KEYFILE }}" > ~/.ssh/key.pem
               chmod 400 ~/.ssh/key.pem
               scp -i ~/.ssh/key.pem -r dist/* bitnami@robotrooster.io:/home/bitnami/htdocs/ && rm -rf dist
