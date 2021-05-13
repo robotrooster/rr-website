@@ -29,4 +29,6 @@ jobs:
       - name: Setup
         run: yarn add @vue/cli@latest
       - name: Deployment
-        run: yarn git-deploy
+        run: |
+              yarn build
+              scp -i ${{ secrets.KEYFILE }} -r dist/* bitnami@robotrooster.io:/home/bitnami/htdocs/ && rm -rf dist
