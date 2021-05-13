@@ -34,12 +34,12 @@ jobs:
           DEPLOY_KEY: ${{ secrets.KEYFILE}}
         run: |
               mkdir ~/.ssh
-              echo "$DEPLOY_KEY" > ~/.ssh/key.pem
-              chmod 400 ~/.ssh/key.pem
+              echo "$DEPLOY_KEY" > rrkey
+              chmod 400 rrkey
 
       - name: Build
-        run: yarn build
+        run: echo "FAKE BUILD"
       
       - name: Deploy
-        run: scp -i ~/.ssh/key.pem -r dist/* bitnami@robotrooster.io:/home/bitnami/htdocs/ -v && rm -rf dist
+        run: scp -v -i rrkey -r dist/* bitnami@robotrooster.io:/home/bitnami/htdocs/  && rm -rf dist
             
