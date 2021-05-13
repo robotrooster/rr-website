@@ -31,7 +31,6 @@ jobs:
       - name: Deploy to Server
         uses: burnett01/rsync-deployments@4.1
         env:
-            SSH_PRIVATE_KEY: ${{ secrets.KEYFILE }}
             path: dist/
             remote_path: /home/htdocs/
             remote_host: robotrooster.io
