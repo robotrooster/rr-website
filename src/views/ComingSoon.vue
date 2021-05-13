@@ -42,10 +42,15 @@
     },
   };
 </script>
-<style>
+<style lang="scss">
   .heading-title{
     font-size:10em !important;
     line-height: 50px;
+      @media screen and (max-width: 767px){
+        font-size: 4em !important;
+        line-height: 1.2;
+        margin-top: 30px;
+      }
     }
   .theRooster{
       text-align: center;

@@ -13,7 +13,7 @@
                 ><img :src="logo" alt="Logo images"
               /></router-link>
             </div> -->
-            <div class="infoText">
+            <div class="infoText text-sm-center">
                 <a mailto="ben@robotrooster.io">ben@robotrooster.io</a>
                  <span class="separator"> | </span>
                  (240) r0oster
@@ -34,7 +34,7 @@
         </v-col>
         <!-- End .col -->
         <v-col lg="4" md="4" sm="12" cols="12">
-          <div class="inner text-md-right text-center mt_md--20 mt_sm--20">
+          <div class="inner text-md-right text-center text-sm-center mt_md--20 mt_sm--20">
             <div class="text">
               <p>
                 Copyright © {{ new Date().getFullYear() }} Robot Rooster. All
@@ -77,7 +77,14 @@
     },
   };
 </script>
-<style>
+<style lang="scss">
+  div {
+    &.text-sm-center {
+      @media screen and (max-width: 480px){
+          text-align: center;
+      }
+    }
+  }
   .infoText{
       color:#ACA69A;
       font-size:18px;
