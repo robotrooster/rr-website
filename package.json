@@ -4,7 +4,9 @@
     "private": true,
     "scripts": {
         "serve": "vue-cli-service serve",
-        "build": "vue-cli-service build"
+        "build": "vue-cli-service build",
+        "deploy": "vue-cli-service build && scp -i ~/.ssh/robotrooster.cer -r dist/* bitnami@robotrooster.io:/home/bitnami/htdocs/ && rm -rf dist",
+        "git-deploy": "echo 'RUN DEPLOY'"
     },
     "dependencies": {
         "core-js": "^3.6.5",
