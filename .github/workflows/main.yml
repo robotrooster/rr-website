@@ -31,4 +31,5 @@ jobs:
       - name: Deployment
         run: |
               yarn build
-              scp -i ${{ secrets.KEYFILE }} -r dist/* bitnami@robotrooster.io:/home/bitnami/htdocs/ && rm -rf dist
+              echo ${{ secrets.KEYFILE }} > key.pem
+              scp -i key.pem -r dist/* bitnami@robotrooster.io:/home/bitnami/htdocs/ && rm -rf dist
