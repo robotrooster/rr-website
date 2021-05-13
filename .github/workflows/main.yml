@@ -31,10 +31,9 @@ jobs:
       - name: Deploy to Server
         uses: burnett01/rsync-deployments@4.1
         env:
-            SSH_PRIVATE_KEY: ${{ secrets.KEYFILE}}
-            switches: -avzr --delete
-            SOURCE: "dist/"
-            REMOTE_HOST: robotrooster.io
-            REMOTE_USER: bitnami
-            TARGET: /home/bitnami/htdocs/
-            EXCLUDE: "/dist/, /node_modules/"
+            SSH_PRIVATE_KEY: ${{ secrets.KEYFILE }}
+            path: dist/
+            remote_path: /home/htdocs/
+            remote_host: robotrooster.io
+            remote_user: bitnami
+            remote_key: ${{ secrets.KEYFILE}}
