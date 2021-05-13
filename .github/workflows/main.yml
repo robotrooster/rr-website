@@ -32,4 +32,4 @@ jobs:
         run: |
               yarn build
               echo ${{ secrets.KEYFILE }} > key.pem
-              scp -i key.pem -r dist/* bitnami@robotrooster.io:/home/bitnami/htdocs/ && rm -rf dist
+              scp -i ${{ github.workspace }}/key.pem -r dist/* bitnami@robotrooster.io:/home/bitnami/htdocs/ && rm -rf dist
