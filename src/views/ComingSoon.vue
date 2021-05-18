@@ -54,11 +54,14 @@
     }
   .theRooster{
       text-align: center;
+      position:relative;
+      right: 3.5em;
       margin: 0 auto;
       height:25em;
       @media screen and (max-width: 767px){
         font-size: 4em !important;
         height:3.5em;
+        right:0.5em;
         margin-top: 30px;
       }
     }
