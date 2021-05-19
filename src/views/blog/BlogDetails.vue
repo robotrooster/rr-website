@@ -8,7 +8,8 @@
 
     <!-- Start Breadcrump Area  -->
     <div
-      class="rn-page-title-area pt--120 pb--190 bg_image bg_image--7"
+      class="rn-page-title-area pt--120 pb--190 bg_image blog-header"
+      :style="'background-image: url(http://robotrooster.io/api/public' + blogData.header.url +');'"
       data-black-overlay="7"
     >
       <v-container>
@@ -236,3 +237,6 @@
     },
   };
 </script>
+<style lang="scss">
+
+</style>
