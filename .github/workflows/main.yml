@@ -42,4 +42,7 @@ jobs:
       
       - name: Deploy to RobotRooster.io
         run: scp -v -i rrkey -o StrictHostKeyChecking=no -r dist/* bitnami@robotrooster.io:/home/bitnami/htdocs/  && rm -rf dist
+        
+      - name: Update API
+        run: scp -v -i rrkey -o StrictHostKeyChecking=no -r api/* bitnami@robotrooster.io:/home/bitnami/htdocs/api/
             
