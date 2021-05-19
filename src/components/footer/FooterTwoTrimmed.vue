@@ -93,5 +93,8 @@
       color:"white";
       font-size: 18px;
       font-weight: bold;
+      @media screen and (max-width: 480px){
+          display: none;
+        }
       }
 </style>

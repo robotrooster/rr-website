@@ -119,16 +119,16 @@
         .st6{fill:#ACA29A;}
       @media screen and (max-width: 767px){
         font-size: 4em !important;
-        height:3.5em;
-        right:0.5em;
-        margin-top: 30px;
-        margin-bottom: -0.3em;
+        height: 2.5em;
+        right: 0.3em;
+        margin-top: 60px;
+        margin-bottom: -0.4em;
       }
       
     }
     .logo{
       .st0{fill:#ACA29A;}
-      height: 60px;
+      height: 40px;
       /* margin: 0 auto; */
       margin-left: -5.5em;
       margin-top: 0.5em;
