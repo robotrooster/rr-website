@@ -8,10 +8,11 @@
     >
       <v-list-item class="pa-5">
         <div class="logo">
-          <img
+          <!-- <img
             src="../../assets/images/logo/rooster.svg"
             alt="The Rooster"
-          />
+          /> -->
+          <rooster class="theLogoRooster" />
         </div>
         <v-spacer></v-spacer>
         <v-btn
@@ -94,7 +95,12 @@
 
 <script>
   import feather from "feather-icons";
+  import rooster from "../../assets/images/logo/rooster.svg"
+
   export default {
+    components:{
+      rooster
+    },
     data: () => ({
       drawer: false,
       items: [
@@ -117,3 +123,17 @@
     },
   };
 </script>
+<style lang="scss">
+.theLogoRooster{
+  height:7em;
+  margin:0 auto;
+  margin-left:50%;
+  .st0{fill:#574A3F;}
+  .st1{fill:#44382C;}
+  .st2{fill:#ACA29B;}
+  .st3{fill:#D4755D;}
+  .st4{fill:#C22026;}
+  .st5{fill:#131415;}
+  .st6{fill:#ACA29A;}
+}
+</style>

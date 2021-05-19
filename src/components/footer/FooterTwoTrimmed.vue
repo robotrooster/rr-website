@@ -1,10 +1,10 @@
 <template>
   <!-- Start Footer Style Two  -->
   <div
-    class="footer-style-2 ptb--30 bg_image bg_image--1"
+    class="footer-style-2 ptb--60 bg_image bg_image--1"
     data-black-overlay="6"
   >
-    <div class="wrapper plr--50 plr_sm--20">
+    <div class="plr--50">
       <v-row align="center">
         <v-col lg="4" md="4" sm="6" cols="12">
           <div class="inner">
@@ -16,12 +16,12 @@
             <div class="infoText text-sm-center">
                 <a mailto="ben@robotrooster.io">ben@robotrooster.io</a>
                  <span class="separator"> | </span>
-                 (240) r0oster
+                 (240)&nbsp;r0oster
             </div>
           </div>
         </v-col>
         <!-- End .col -->
-        <v-col lg="4" md="4" sm="6" cols="12">
+        <!-- <v-col lg="4" md="4" sm="6" cols="12">
           <div class="inner text-center">
             <ul class="social-share rn-lg-size d-flex justify-center liststyle">
               <li v-for="(social, i) in socialList" :key="i">
@@ -31,9 +31,9 @@
               </li>
             </ul>
           </div>
-        </v-col>
+        </v-col> -->
         <!-- End .col -->
-        <v-col lg="4" md="4" sm="12" cols="12">
+        <v-col lg="4" md="4" sm="6" cols="12">
           <div class="inner text-md-right text-center text-sm-center mt_md--20 mt_sm--20">
             <div class="text">
               <p>
@@ -64,10 +64,10 @@
           //   icon: "fa-linkedin-in",
           //   url: "https://www.linkedin.com/",
           // },
-          {
-            icon: "fa-twitter",
-            url: "https://twitter.com/robotrooster",
-          },
+          // {
+          //   icon: "fa-twitter",
+          //   url: "https://twitter.com/robotrooster",
+          // },
           // {
           //   icon: "fa-instagram-square",
           //   url: "https://www.instagram.com/",

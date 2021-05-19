@@ -4,7 +4,7 @@
     <div class="badge__scene">
       <figure class="badge__image"> 
         <img :src="symbol" alt="">
-        <!-- {{symbol}} -->
+        <slot></slot>
       </figure> 
     </div> 
   </div>
