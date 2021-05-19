@@ -3,7 +3,7 @@
     <!-- Start Header Area -->
     <HeaderBlank>
       <!-- <img slot="logo" src="../assets/images/logo/rooster-font-logo.svg" /> -->
-      <logo slot="logo" class="logo"/>
+      <!-- <logo slot="logo" class="logo"/> -->
     </HeaderBlank>
     <!-- End Header Area -->
     <!-- Start 404 Page  -->
@@ -45,8 +45,11 @@
             </div>
           </v-col>
         </v-row>
+
       </v-container>
+      
     </div>
+    <Contact class="contact-form"/>
     <FooterTwoTrimmed />
   </div>
 </template>
@@ -55,6 +58,7 @@
   import HeaderBlank from "../components/header/HeaderBlank";
   import FooterTwoTrimmed from "../components/footer/FooterTwoTrimmed";
   import Badge from "../components/brand/Badge"
+  import Contact from "../components/contact/Contact"
 
   import react from "../assets/images/brand/react.svg"
   import vuejs from "../assets/images/brand/vue-dot-js.svg"
@@ -64,7 +68,6 @@
   import shopify from "../assets/images/brand/shopify.svg"
 
   import rooster from "../assets/images/logo/rooster.svg"
-  import logo from "../assets/images/logo/rooster-font-logo.svg"
   
 
 
@@ -74,14 +77,14 @@
       HeaderBlank,
       FooterTwoTrimmed, 
       Badge,
+      Contact,
       react,
       vuejs,
       nodejs,
       aws,
       wordpress,
       shopify,
-      rooster,
-      logo
+      rooster
 
     },
     data() {
@@ -125,6 +128,35 @@
         margin-bottom: -0.4em;
       }
       
+    }
+
+    .contact-form{
+      background: linear-gradient(0deg, rgba(55,55,55,1) 0%, rgba(172,162,155,1) 75%, rgba(204,204,204,1) 100%);
+      padding:15px;
+      input, textarea{
+        background: #333;
+        border: #777 solid 2px;
+        color: white;
+        border-radius: 5px;
+      }
+      textarea{
+        padding: 15px;
+        height: 130px;
+      }
+      .inpur-error{
+        color:#8d1b1f;
+    
+      }
+      .rn-button-style--2{
+        margin-bottom: 40px;
+        margin-top: 15px;
+        height:45px;
+        line-height: 12px;;
+        background: #C22026 !important;
+        &:hover{
+          background: #000 !important;
+        }
+      }
     }
     
 </style>

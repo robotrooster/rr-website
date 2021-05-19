@@ -1,14 +1,17 @@
 <template>
-  <v-row align="start" class="row--35">
-    <v-col lg="6" md="6" sm="12" cols="12" order="2" order-md="1">
+ <div>
       <div class="section-title text-left mb--50 mb_sm--30 mb_md--30">
-        <h2 class="heading-title">Contact Us.</h2>
-        <p class="description">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto
-          cupiditate aperiam neque
-        </p>
+        <h2 class="contact-heading-title">Make Contact</h2>
+        <!-- <p class="description">
+          Tell me what you're looking for
+        </p> -->
       </div>
-      <div class="form-wrapper">
+      <div class="success-box" v-if="success">
+        Your message was sent. <br /> I'll be in touch.
+      </div>
+       <v-row align="start" class="row--35">
+    <v-col lg="6" md="6" sm="6" cols="12" order="2" order-md="1">
+
         <ValidationObserver v-slot="{ handleSubmit }">
           <form @submit.prevent="handleSubmit(onSubmit)">
             <ValidationProvider
@@ -56,43 +59,45 @@
                 <span class="inpur-error">{{ errors[0] }}</span>
               </label>
             </ValidationProvider>
+        
 
-            <ValidationProvider
-              name="message"
-              rules="required"
-              v-slot="{ errors }"
-            >
-              <label>
-                <textarea
-                  v-model="formData.message"
-                  placeholder="Your Message"
-                ></textarea>
-                <span class="inpur-error">{{ errors[0] }}</span>
-              </label>
-            </ValidationProvider>
-
-            <button
+           
+          </form>
+        </ValidationObserver>
+       
+    </v-col>
+    <v-col lg="6" md="6" sm="6" cols="12" order="2" order-md="2">
+                    <ValidationProvider
+                      name="message"
+                      rules="required"
+                      v-slot="{ errors }"
+                    >
+                      <label>
+                        <textarea
+                          v-model="formData.message"
+                          placeholder="Your Message"
+                        ></textarea>
+                        <span class="inpur-error">{{ errors[0] }}</span>
+                      </label>
+                    </ValidationProvider>
+                    
+        </v-col>
+  </v-row>
+        <button
               class="rn-button-style--2 btn_solid"
               type="submit"
               value="submit"
+              @click="onSubmit"
             >
               Submit
             </button>
-          </form>
-        </ValidationObserver>
-      </div>
-    </v-col>
-    <v-col lg="6" md="6" sm="12" cols="12" order="1" order-md="2">
-      <div class="thumbnail mb_md--40 mb_sm--40">
-        <img src="../../assets/images/about/about-6.jpg" alt="trydo" />
-      </div>
-    </v-col>
-  </v-row>
+  </div>
 </template>
 
 <script>
   import { ValidationObserver } from "vee-validate";
   import { ValidationProvider } from "vee-validate/dist/vee-validate.full.esm";
+  import axios from 'axios';
   export default {
     components: {
       ValidationObserver,
@@ -100,6 +105,7 @@
     },
     data() {
       return {
+        success:false,
         formData: {
           name: "",
           email: "",
@@ -110,8 +116,35 @@
     },
     methods: {
       onSubmit() {
+        axios.post('http://robotrooster.io:3333/contacts',this.formData).then(res=>{
+          console.log(res);
+          if(res.data.name){
+            this.success = true;
+            // this.formData = {
+            //   name: "",
+            //   email: "",
+            //   subject: "",
+            //   message: "",
+            // }
+          }
+        })
         console.log(this.formData);
       },
     },
   };
 </script>
+<style lang="scss">
+.contact-heading-title{
+  font-size:3em !important;
+}
+.success-box{
+    position: relative;
+    width: 100%;
+    top: -30px;
+    margin: 0 auto;
+    background: #339933;
+    padding: 10px;
+    border-radius: 6px;
+    color: white;
+}
+</style>
