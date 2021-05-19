@@ -126,15 +126,5 @@
       }
       
     }
-    .logo{
-      .st0{fill:#ACA29A;}
-      height: 40px;
-      /* margin: 0 auto; */
-      margin-left: -5.5em;
-      margin-top: 0.5em;
-      width: 380px;
-    }
-    .v-app-bar--is-scrolled .logo{
-      .st0{fill:#000;}
-    }
+    
 </style>

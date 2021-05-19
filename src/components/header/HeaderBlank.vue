@@ -54,7 +54,8 @@
       class="header-one-page-nav"
     >
       <router-link to="/" class="logo">
-        <slot name="logo"></slot>
+        <!-- <slot name="logo"></slot> -->
+        <logo class="textLogo" />
         <slot name="logo-dark"></slot>
       </router-link>
       <!-- End brand logo -->
@@ -96,10 +97,12 @@
 <script>
   import feather from "feather-icons";
   import rooster from "../../assets/images/logo/rooster.svg"
+  import logo from "../../assets/images/logo/rooster-font-logo.svg"
 
   export default {
     components:{
-      rooster
+      rooster,
+      logo
     },
     data: () => ({
       drawer: false,
@@ -136,4 +139,16 @@
   .st5{fill:#131415;}
   .st6{fill:#ACA29A;}
 }
+.textLogo{
+      .st0{fill:#ACA29A;}
+      height: 40px;
+      margin: 0 auto;
+      position: absolute;
+      margin-left: -10em;
+      margin-top: -0.75em;
+      width: 380px;
+    }
+    .v-app-bar--is-scrolled .textLogo{
+      .st0{fill:#000;}
+    }
 </style>
