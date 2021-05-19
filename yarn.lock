@@ -6376,6 +6376,11 @@ pretty-error@^2.0.2:
     lodash "^4.17.20"
     renderkid "^2.0.4"
 
+prism-es6@^1.2.0:
+  version "1.2.0"
+  resolved "https://registry.yarnpkg.com/prism-es6/-/prism-es6-1.2.0.tgz#ead4e0d7809fefc36b9636f1ea4b2cebad074e63"
+  integrity sha512-A8JV9G2zKM8PWksT7YJcmnaWtYO6C9hSfxM/xv0RxB2aNc8rjv30WakzIw1gWyqLi2eiqquo2KmS7orxqlm+yg==
+
 process-nextick-args@~2.0.0:
   version "2.0.1"
   resolved "https://registry.yarnpkg.com/process-nextick-args/-/process-nextick-args-2.0.1.tgz#7820d9b16120cc55ca9ae7792680ae7dba6d7fe2"
@@ -7932,6 +7937,14 @@ vue-cli-plugin-vuetify@~2.0.7:
     semver "^7.1.2"
     shelljs "^0.8.3"
 
+vue-code-highlight@^0.7.8:
+  version "0.7.8"
+  resolved "https://registry.yarnpkg.com/vue-code-highlight/-/vue-code-highlight-0.7.8.tgz#04f8e0c1c17edd52f7c769dd19dda1d2d928bc90"
+  integrity sha512-jMt1W0DGisNZ3B2TASFCPLEswohVrwImX+TxzMIZINZyAUUNZ1Xth3soJw1xepTsMgxkIkhsmN/xVNpiI3bU4g==
+  dependencies:
+    prism-es6 "^1.2.0"
+    vue "^2.5.16"
+
 vue-cool-lightbox@^2.7.0:
   version "2.7.3"
   resolved "https://registry.yarnpkg.com/vue-cool-lightbox/-/vue-cool-lightbox-2.7.3.tgz#557b7f8e6ef12eae2a8dbe82b9a2fc247b857423"
@@ -8059,7 +8072,7 @@ vue-visibility-sensor@^0.3.0:
   resolved "https://registry.yarnpkg.com/vue-visibility-sensor/-/vue-visibility-sensor-0.3.0.tgz#926792dc43b083a6320eb232188e36ec88a6f560"
   integrity sha512-Bkffw+KQge8vZ26AX8/pbw0ox+1r5cMKuEy/TOW4asKEabjwBGBdj6rQM5UKu9b1ffDktPK+NLxTDQYronBsjA==
 
-vue@^2.2.6, vue@^2.6.10, vue@^2.6.11, vue@^2.6.12:
+vue@^2.2.6, vue@^2.5.16, vue@^2.6.10, vue@^2.6.11, vue@^2.6.12:
   version "2.6.12"
   resolved "https://registry.yarnpkg.com/vue/-/vue-2.6.12.tgz#f5ebd4fa6bd2869403e29a896aed4904456c9123"
   integrity sha512-uhmLFETqPPNyuLLbsKz6ioJ4q7AZHzD8ZVFNATNyICSZouqP2Sz0rotWQC8UNBF6VGSCs5abnKJoStA6JbCbfg==

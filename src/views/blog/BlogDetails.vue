@@ -37,7 +37,8 @@
           <v-col cols="12">
             <div class="inner-wrapper">
               <div class="inner">
-                <vue-markdown :source="blogBody"></vue-markdown>
+
+                <content-render :content="blogBody"></content-render>
               
             </div>
             </div>
@@ -146,27 +147,28 @@
     </div>
     <!-- End Comment Form  -->
 
-    <Footer />
+    <FooterTwoTrimmed />
   </div>
 </template>
 
 <script>
   import HeaderBlank from "../../components/header/HeaderBlank";
-  import Footer from "../../components/footer/Footer";
+  import FooterTwoTrimmed from "../../components/footer/FooterTwoTrimmed";
   import feather from "feather-icons";
   import axios from "axios";
-  import VueMarkdown from "vue-markdown-render"
+  import ContentRender from "../../components/blog/ContentRender"
 
 
   import { ValidationObserver } from "vee-validate";
   import { ValidationProvider } from "vee-validate/dist/vee-validate.full.esm";
+
   export default {
     components: {
       HeaderBlank,
-      VueMarkdown,
-      Footer,
+      ContentRender,
+      FooterTwoTrimmed,
       ValidationObserver,
-      ValidationProvider,
+      ValidationProvider
     },
     props:{
       postId: {
