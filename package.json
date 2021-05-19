@@ -8,12 +8,16 @@
         "deploy": "vue-cli-service build && scp -i ~/.ssh/robotrooster.cer -r dist/* bitnami@robotrooster.io:/home/bitnami/htdocs/ && rm -rf dist"
     },
     "dependencies": {
+        "axios": "^0.21.1",
+        "babel-runtime": "^6.26.0",
         "core-js": "^3.6.5",
         "feather-icons": "^4.28.0",
         "vee-validate": "^3.4.5",
         "vue": "^2.6.11",
         "vue-cool-lightbox": "^2.7.0",
         "vue-count-to": "^1.0.13",
+        "vue-markdown": "^2.2.4",
+        "vue-markdown-render": "^1.1.1",
         "vue-particles": "^1.0.9",
         "vue-router": "^3.2.0",
         "vue-scrollactive": "^0.9.3",

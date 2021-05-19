@@ -15,6 +15,15 @@ const routes = [{
             title: 'Robot Rooster'
         }
     },
+    {
+        path: '/blog/:postId',
+        component: () =>
+            import ('../views/blog/BlogDetails.vue'),
+        meta: {
+            title: 'Robot Rooster'
+        },
+        props:true
+    },
 
     {
         path: '/home',
